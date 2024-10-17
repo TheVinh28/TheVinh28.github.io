@@ -9,6 +9,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Header*/
 header {
     background-color: #FFE4B5;
     padding: 1rem;
@@ -41,6 +42,24 @@ header {
 main {
     display: flex;
     padding: 1rem;
+}
+
+select{
+    background-color:white;
+    border: 1px solid #ccc9c9;
+}
+
+.logo-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #D3D3D3;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 /* Sidebar */
@@ -140,28 +159,6 @@ footer {
 .footer-content {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-}
-
-.c1{
-    transform: translate(10%,0%);
-}
-
-select{
-    background-color:white;
-    border: 1px solid #ccc9c9;
-}
-
-.logo-image {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #D3D3D3;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
     gap: 0.5rem;
 }
 
