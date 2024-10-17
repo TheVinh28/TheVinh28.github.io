@@ -1,0 +1,170 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #FFE4B5;
+    padding: 1rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.header-content nav a {
+    text-decoration: none;
+    color: #000;
+    transform: translate(10%, 22%);
+}
+
+.cart-button {
+    background-color: #ADD8E6;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    padding: 1rem;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    padding: 1rem;
+    height: 300px;
+    border: 1px solid black;
+}
+
+.sidebar h3 {
+    margin-bottom: 1rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebar button {
+    background-color: #ADD8E6;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+/* Product List */
+.product-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+}
+
+.search-and-sort {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.search-and-sort input {
+    flex: 1;
+    padding: 0.5rem;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.product-item {
+    flex: 1 1 calc(33.33% - 1rem);
+    padding: 1rem;
+    text-align: center;
+}
+
+.product-image {
+    height: 150px;
+    background-color: #f0f0f0;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.price {
+    color: blue;
+}
+
+.discount {
+    color: red;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+/* Footer */
+footer {
+    background-color: #FFE4B5;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.c1{
+    transform: translate(10%,0%);
+}
+select{
+    background-color:white;
+    border: 1px solid #ccc9c9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .products {
+        flex-direction: column;
+    }
+
+    .product-item {
+        flex: 1 1 100%;
+    }
+}
