@@ -1,0 +1,184 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background-color:white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #FFD700;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #000;
+    margin-left: 1rem;
+}
+
+/* Main Section */
+.movie-detail {
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.movie-image {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-image {
+    background-color: #F0C0C0;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-buttons button {
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.share-button {
+    background-color: #F8D7DA;
+}
+
+.download-button {
+    background-color: #FFC107;
+}
+
+.watch-button {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.movie-info {
+    flex: 1;
+}
+
+.movie-info h1 {
+    font-size: 24px;
+}
+
+.movie-info p {
+    margin: 0.5rem 0;
+}
+
+.duration {
+    color: green;
+}
+
+.rating {
+    color: gold;
+}
+
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.tags .tag {
+    background-color: #f0f0f0;
+    padding: 0.3rem 0.5rem;
+    border: none;
+}
+
+/* Description */
+.description {
+    padding: 1rem;
+}
+
+.description h2 {
+    margin-bottom: 0.5rem;
+}
+
+.d1{
+    border: 1px solid black;
+}
+
+/* Cast */
+.cast {
+    padding: 1rem;
+}
+
+.cast h2 {
+    margin-bottom: 0.5rem;
+}
+
+.cast-list {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.cast-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    text-align: center;
+}
+
+.avatar {
+    font-size: 40px;
+    background-color: #ADD8E6;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .movie-detail {
+        flex-direction: column;
+    }
+
+    .cast-list {
+        justify-content: space-between;
+    }
+}
