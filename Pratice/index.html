@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javasrcipt</title>
+    <script scr="../script.js">
+// Bài 1
+// Yêu cầu 1
+let s = prompt("Nhập chuỗi:");
+if (s.length >= 8) {
+    console.log("Chuỗi này ok");
+} else {
+    console.log("Ngắn quá, dài thêm tí nữa");
+}
+// Yêu cầu 2
+let a = parseInt(prompt("Nhập tuổi:"));
+if (a >= 18) {
+    console.log("Đủ 18 thì quẩy tiếp");
+} else if (a >= 16) {
+    console.log("Đợi thêm ít năm nữa");
+} else {
+    console.log("Còn quá nà trẻ");
+}
+// Bài 2
+// Yêu cầu 1
+let total = 0;
+for (let i = -10; i <= 50; i++) {
+    if (i % 2 === 0) {
+        total += i;
+    }
+}
+// Yêu cầu 2
+console.log("Tổng các số chẵn từ -10 đến 50 là:", total);
+for (let i = -100; i <= 100; i++) {
+    if (i % 9 === 0) {
+        console.log(i);
+    }
+}
+// Yêu cầu 3
+let i = 1;
+while (i <= 200) {
+    console.log(i);
+    i++;
+}
+// Yêu cầu 4
+let q = prompt("Nhập chuỗi:");
+let l = parseInt(prompt("Nhập độ dài mong muốn:"));
+while (q.length < l) {
+    q += 'a';
+}
+console.log("Chuỗi kết quả:", q);
+// Yêu cầu 5
+let x = parseInt(prompt("Nhập x:"));
+let y = parseInt(prompt("Nhập y:"));
+if (x < y) {
+    for (let i = x; i <= y; i++) {
+        console.log(i);
+    }
+} else {
+    for (let i = x; i >= y; i--) {
+        console.log(i);
+    }
+}
+for (let i = 1; i <= 500; i++) {
+    console.log(i);
+}
+// Thực hành
+// Yêu cầu 1
+for (let i = 1; i <= 500; i++) {
+    console.log(i);
+}
+// Yêu cầu 2
+for (let i = 1; i <= 300; i++) {
+    if (i % 2 === 0 && i % 3 === 0) {
+        console.log(i);
+    }
+}
+// Yêu cầu 3
+let t = 0;
+for (let i = -30; i <= 50; i++) {
+    if (i % 2 === 0) {
+        t += i;
+    }
+}
+console.log("Tổng các số chẵn là:", t);
+// Yêu cầu 4
+let n = parseInt(prompt("Nhập số n:"));
+let f = 1;
+for (let i = 1; i <= n; i++) {
+    f *= i;
+}
+console.log("Giai thừa của", n, "là:", f);
+// Yêu cầu 5
+let o = parseInt(prompt("Nhập số a:"));
+let b = parseInt(prompt("Nhập số b (b > a):"));
+let u = parseInt(prompt("Nhập số x:"));
+
+if (o >= b) {
+    console.log("Giá trị của a phải nhỏ hơn b.");
+} else {
+    let h = -1;
+    for (let i = o; i <= b; i++) {
+        if (i % u === 0) {
+            h = i;
+            break;
+        }
+    }
+
+    if (h !== -1) {
+        console.log("Số nhỏ nhất trong khoảng [", o, ",", b, "] mà chia hết cho", u, "là:", h);
+    } else {
+        console.log("Không có số nào trong khoảng [", o, ",", b, "] chia hết cho", u);
+    }
+}
+// Yêu cầu 6
+let p = parseInt(prompt("Nhập số n (n >= 2):"));
+
+if (p < 2) {
+    console.log("Vui lòng nhập n >= 2.");
+} else {
+    let S = 0;
+    for (let i = 1; i <= p; i++) {
+        S += 1 / (i * (i + 1));
+    }
+    console.log("Giá trị của biểu thức S là:", S);
+}
+// Yêu cầu 7
+let g = parseInt(prompt("Nhập số n:"));
+let divisors = [];
+for (let i = 1; i <= g; i++) {
+    if (g % i === 0) {
+        divisors.push(i);
+    }
+}
+console.log("Các ước của", g, "là:", divisors.join(", "));
+// Yêu càu 8
+let k = parseInt(prompt("Nhập số n:"));
+let isPrime = true;
+if (k <= 1) {
+    isPrime = false;
+} else {
+    for (let i = 2; i <= Math.sqrt(k); i++) {
+        if (k % i === 0) {
+            isPrime = false;
+            break;
+        }
+    }
+}
+console.log(k, isPrime ? "là số nguyên tố" : "không phải là số nguyên tố");
+// Yêu cầu 9
+let r = prompt("Nhập chuỗi:");
+let j = parseInt(prompt("Nhập độ dài mong muốn:"));
+while (r.length < l) {
+    s += '0';
+}
+console.log("Chuỗi kết quả:", r);
+// Yêu cầu 10
+function gcd(a, b) {
+    while (b !== 0) {
+        let temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+function lcm(a, b) {
+    return (a * b) / gcd(a, b);
+}
+
+let m = parseInt(prompt("Nhập số m:"));
+let v = parseInt(prompt("Nhập số n:"));
+console.log("Bội chung nhỏ nhất của", m, "và", v, "là:", lcm(m, v));
+// Yêu cầu 11
+let correct = Math.floor(Math.random() * 20) + 1;
+let attempts = 0;
+let maxAttempts = 5;
+
+while (attempts < maxAttempts) {
+    let answer = parseInt(prompt("Nhập số bạn đoán (1-20):"));
+    attempts++;
+    if (answer === correct) {
+        console.log("Đoán đúng!");
+        break;
+    } else {
+        console.log("Đoán sai!");
+        if (attempts === maxAttempts) {
+            console.log("Bạn đã thua cuộc.");
+        }
+    }
+}
+// Yêu cầu 12
+let z = parseInt(prompt("Nhập số n (2 <= n <= 10):"));
+if (z >= 2 && z <= 10) {
+    console.log("Bảng cửu chương của", z);
+    for (let i = 1; i <= 10; i++) {
+        console.log(`${z} x ${i} = ${z * i}`);
+    }
+} else {
+    console.log("Vui lòng nhập số trong khoảng từ 2 đến 10.");
+}
+// Yêu cầu 13
+let h = parseInt(prompt("Nhập vào số n (n >= 2):"));
+let square = "";
+
+for (let i = 0; i < h; i++) {
+    for (let j = 0; j < h; j++) {
+        square += "* ";
+    }
+    square += "\n";
+}
+console.log(square);
+// Yêu càu 14
+let w = parseInt(prompt("Nhập vào số m (m >= 2):"));
+let e = parseInt(prompt("Nhập vào số n (n >= 2):"));
+let rectangle = "";
+
+for (let i = 0; i < e; i++) {
+    for (let j = 0; j < w; j++) {
+        rectangle += "* ";
+    }
+    rectangle += "\n";
+}
+console.log(rectangle);
+// Yêu cầu 15
+let d = parseInt(prompt("Nhập vào số n (n >= 3):"));
+let triangle = "";
+
+for (let i = 1; i <= d; i++) {
+    for (let j = 0; j < i; j++) {
+        triangle += "* ";
+    }
+    triangle += "\n";
+}
+console.log(triangle);
+// Yêu cầu 16
+let we = parseFloat(prompt("Nhập vào cân nặng (kg):"));
+let he = parseFloat(prompt("Nhập vào chiều cao (m):"));
+let BMI = we / (he * he);
+
+if (BMI < 18.5) {
+    console.log("Nhẹ cân");
+} else if (BMI < 23) {
+    console.log("Bình thường");
+} else if (BMI < 25) {
+    console.log("Thừa cân");
+} else {
+    console.log("Béo phì");
+}
+// Yêu cầu 17
+let ad = Math.floor(Math.random() * 6) + 5;
+let ne;
+
+do {
+    ne = parseInt(prompt("Nhập vào số n:"));
+} while (ne !== ad);
+
+console.log("Bạn đã nhập đúng số:", ad);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
