@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javasrcipt</title>
+    <script>
+        //Yêu cầu 1
+        const x = ['a', 'b', 'c'];
+        const y = ['a', 'b', 'c'];
+        const r = x.concat(y)
+        console.log(r);
+        const n = JSON.stringify(x) === JSON.stringify(y);
+        console.log("Kết quả của phép so sánh 2 mảng:", n ? "2 mảng bằng nhau" : "2 mảng không bằng nhau");
+        
+        //Yêu cầu 2
+        const array = [5, 10, 15, 20];
+        console.log("Phần tử có chỉ số 0:", array[0]);
+        console.log("Phần tử có chỉ số 3:", array[3]);
+        const sum = array[1] + array[2];
+        console.log("Kết quả phép cộng phần tử có chỉ số 1 và 2:", sum);
+        array.splice(1,3, 20,15,10);
+        console.log("Mảng sau khi hoán đổi phần tử có chỉ số 1 và 3:", array);
+
+        //Yêu cầu 3
+        const a = [5, 10, 3, 8, 12, 7];
+        const e = a.filter(num => num % 2 === 0);
+        console.log("Các số chẵn trong mảng:", e);
+        const s = array.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+        console.log("Tổng các phần tử trong mảng:", s);
+        const m = Math.min(...a);
+        console.log("Phần tử nhỏ nhất trong mảng:", m);
+        
+        //Yêu cầu 4
+        const b = [];
+        const c = parseInt(prompt("Nhập vào số n (n > 0): "));
+        if (c > 0) {
+            for (let i = 0; i < c; i++) {
+                const randomNum = Math.floor(Math.random() * 100);
+                b.push(randomNum);
+            }
+            console.log("Mảng với các số ngẫu nhiên:", b);
+        } else {
+            console.log("Vui lòng nhập số n lớn hơn 0.");
+        }
+        
+        //Yêu cầu 5
+        let arr = [1, 2];
+        const d = parseInt(prompt("Nhập vào số n (n > 2): "));
+        function addZeros(d) {
+            if (d <= 2) {
+                console.log("n phải lớn hơn 2");
+                return;
+            }
+            while (arr.length < d) {
+                arr.unshift(0);
+            }
+            return arr;
+        }
+        console.log("Mảng ban đầu:", arr);
+        console.log("Mảng sau khi thêm:", addZeros(d));
+
+        //Yêu cầu 6
+        const g = [1, 2, 3, 4, 5];
+        while (g.length > 1) {
+            g.pop();
+        }
+        console.log("Mảng sau khi xóa đến khi độ dài bằng 1:", g);
+
+        //Yêu cầu 7
+
+        //Thực hành
+        //Yêu cầu 1
+        function arrayNumberExercise() {
+        let arr = [4, 2, 7, 8, 15, 9, 6, 21, 3, 25];
+        console.log("Mảng ban đầu:", arr);
+
+        // Tính tích các phần tử
+        let product = 1;
+        for(let i = 0; i < arr.length; i++) {
+            product *= arr[i];
+        }
+        console.log("Tích các phần tử:", product);
+
+        // Tìm số nhỏ nhất chia hết cho 2
+        let minDivBy2 = Infinity;
+         for(let i = 0; i < arr.length; i++) {
+            if(arr[i] % 2 === 0 && arr[i] < minDivBy2) {
+                minDivBy2 = arr[i];
+            }
+        }
+        console.log("Số nhỏ nhất chia hết cho 2:", minDivBy2);
+
+        // Tìm số lớn nhất chia hết cho 3
+        let maxDivBy3 = -Infinity;
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i] % 3 === 0 && arr[i] > maxDivBy3) {
+                maxDivBy3 = arr[i];
+            }
+        }
+        console.log("Số lớn nhất chia hết cho 3:", maxDivBy3);
+
+        // Tính giá trị trung bình
+        let sum = 0;
+        for(let i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        let average = sum / arr.length;
+        console.log("Giá trị trung bình:", average);
+
+        // Lọc số nguyên tố
+        function isPrime(n) {
+            if(n < 2) return false;
+            for(let i = 2; i <= Math.sqrt(n); i++) {
+                if(n % i === 0) return false;
+            }
+            return true;
+        }
+        let primes = [];
+        for(let i = 0; i < arr.length; i++) {
+            if(isPrime(arr[i])) {
+                primes.push(arr[i]);
+            }
+        }
+        console.log("Các số nguyên tố:", primes);
+
+        // Kiểm tra có số nhỏ hơn 10
+        let hasLessThan10 = false;
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i] < 10) {
+                hasLessThan10 = true;
+                break;
+            }
+        }
+        console.log("Có số nhỏ hơn 10:", hasLessThan10);
+
+        // Kiểm tra tất cả lớn hơn 20
+        let allGreaterThan20 = true;
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i] <= 20) {
+                allGreaterThan20 = false;
+                break;
+            }
+        }
+        console.log("Tất cả lớn hơn 20:", allGreaterThan20);
+
+        // Bubble Sort
+        function bubbleSort(arr) {
+            let n = arr.length;
+            for(let i = 0; i < n - 1; i++) {
+                for(let j = 0; j < n - i - 1; j++) {
+                    if(arr[j] > arr[j + 1]) {
+                        let temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+    
+        let sortedArr = bubbleSort([...arr]);
+        console.log("Mảng sau khi sắp xếp:", sortedArr);
+        }
+        arrayNumberExercise();
+    
+        //Yêu cầu 2
+        function arrayStringExercise() {
+        // Khai báo mảng chuỗi
+        let s = ["hello", "javascript", "programming", "web", "development"];
+        let text = "pro";  // chuỗi cần tìm
+        console.log("Mảng ban đầu:", s);
+
+        // Tìm chuỗi đầu tiên có độ dài nhỏ nhất
+        let minLength = s[0].length;
+        let shortestString = s[0];
+        for(let i = 1; i < s.length; i++) {
+            if(s[i].length < minLength) {
+                minLength = s[i].length;
+                shortestString = s[i];
+            }
+        }
+        console.log("Chuỗi ngắn nhất:", shortestString);
+
+        // Tìm chuỗi chứa text
+        let containsText = [];
+        for(let i = 0; i < s.length; i++) {
+            if(s[i].includes(text)) {
+                containsText.push(s[i]);
+            }
+        }
+        console.log("Các chuỗi chứa '" + text + "':", containsText);
+
+        // Tạo mảng mới với 3 ký tự đầu
+        let newS = [];
+        for(let i = 0; i < s.length; i++) {
+        newS.push(s[i].substring(0, 3));
+        }
+        console.log("Mảng mới với 3 ký tự đầu:", newS);
+
+        // Kết hợp các phần tử với dấu '-'
+        let combined = s.join('-');
+        console.log("Chuỗi kết hợp:", combined);
+        }
+        arrayStringExercise();
+
+        //Yêu cầu 3
+        function twoArraysExercise() {
+        let d1 = "1,3,5,7,9";
+        let d2 = "1,2,3,4,5,6,7,8,9,10";
+        // Chuyển chuỗi thành mảng số
+        let arr1 = d1.split(',').map(Number);
+        let arr2 = d2.split(',').map(Number);
+
+        // Kiểm tra tất cả số trong d1 có nằm trong d2
+        let allInD2 = true;
+        for(let num of arr1) {
+            if(!arr2.includes(num)) {
+                allInD2 = false;
+                break;
+            }
+        }
+        console.log("Tất cả số trong d1 có nằm trong d2:", allInD2);
+
+        // Tính tổng d1
+        let sumD1 = arr1.reduce((sum, num) => sum + num, 0);
+
+        // Kiểm tra số trong d2 chia hết cho tổng d1
+        let divisibleBySum = [];
+        for(let num of arr2) {
+            if(num % sumD1 === 0) {
+                divisibleBySum.push(num);
+            }
+        }
+        console.log("Các số trong d2 chia hết cho tổng d1:", divisibleBySum);
+
+        // Tạo mảng số chia hết cho 2
+        let evenNumbers = [...arr2, ...arr1].filter(num => num % 2 === 0);
+        console.log("Các số chia hết cho 2:", evenNumbers);
+
+        // Merge sort core
+        function merge(left, right) {
+            let result = [];
+            let i = 0, j = 0;
+
+            while(i < left.length && j < right.length) {
+                if(left[i] <= right[j]) {
+                    result.push(left[i]);
+                    i++;
+                } else {
+                    result.push(right[j]);
+                    j++;
+                }
+            }
+
+            return [...result, ...left.slice(i), ...right.slice(j)];
+        }
+
+        let mergedArray = merge(arr1, arr2);
+        console.log("Mảng đã merge:", mergedArray);
+        }
+        twoArraysExercise();
+
+        //Yêu cầu 4
+    
+        //Yêu cầu 5
+        function sumOddNumbers() {
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let sumOdd = 0;
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i] % 2 !== 0) {
+                sumOdd += arr[i];
+            }
+        }
+        console.log("Mảng ban đầu:", arr);
+        console.log("Tổng các số lẻ:", sumOdd);
+        }
+        sumOddNumbers();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
