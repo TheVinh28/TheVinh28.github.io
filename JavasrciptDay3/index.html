@@ -68,6 +68,32 @@
         console.log("Mảng sau khi xóa đến khi độ dài bằng 1:", g);
 
         //Yêu cầu 7
+        const j = [1,2,3,4,5,6];
+        let o = 5
+        for (let i = 0; i < j.length; i++){
+            j[i]=Math.pow(j[i],2);
+        }    
+        console.log(j);
+
+        let k=[];
+        for(let i=0;i<j.length;i++){
+            if(j[i]>=o){
+            k.push(j[i]);
+            }
+        }
+        console.log(k);
+
+        let u =[];
+        for(let i=0;i<j.length;i++){
+            if(j[i]==o){
+                u.push(j[i]);
+                break;
+                console.log(u);
+            }
+            else{
+                console.log("KHông có giá trị nào của s bằng n");            
+            }
+        }
 
         //Thực hành
         //Yêu cầu 1
@@ -262,7 +288,45 @@
         twoArraysExercise();
 
         //Yêu cầu 4
-    
+        //Tạo mảng mới với các phần tử là trung bình tăng trưởng của từng năm (trung bình theo hàng):
+        const growth = [
+        [5, 8, 9, 16],
+        [2, 7, 1, 9],
+        [5, 6, 8, 12],
+        [10, 2, 1, 8],
+        [20, 4, 9, 1]
+        ];
+
+        // Tính trung bình tăng trưởng của từng năm
+        const avgGrowthPerYear = growth.map(year => {
+        const sum = year.reduce((acc, val) => acc + val, 0);
+        return sum / year.length;
+        });
+
+        console.log("Trung bình tăng trưởng của từng năm:", avgGrowthPerYear);
+
+        //Tìm giá trị tăng trưởng trung bình theo năm lớn nhất
+        const maxAvgGrowthPerYear = Math.max(...avgGrowthPerYear);
+        console.log("Giá trị tăng trưởng trung bình theo năm lớn nhất:", maxAvgGrowthPerYear);
+
+        //Tìm giá trị tăng trưởng theo quý lớn nhất
+        const maxGrowthPerQuarter = Math.max(...growth.flat());
+        console.log("Giá trị tăng trưởng theo quý lớn nhất:", maxGrowthPerQuarter);
+
+        //Tính giá trị tăng trưởng trung bình theo quý của các năm (trung bình theo cột)
+        const numYears = growth.length;
+        const numQuarters = growth[0].length;
+
+        const avgGrowthPerQuarter = Array.from({ length: numQuarters }, (_, i) => {
+        let sum = 0;
+        for (let j = 0; j < numYears; j++) {
+            sum += growth[j][i];
+        }
+        return sum / numYears;
+        });
+
+        console.log("Trung bình tăng trưởng theo quý của các năm:", avgGrowthPerQuarter);
+
         //Yêu cầu 5
         function sumOddNumbers() {
         let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
