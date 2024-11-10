@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javasrcipt</title>
+    <script>
+        //Câu đố 1
+        //Yêu cầu 1
+        const myProfile = {
+        name: "Leon",
+        age: 18,
+        address: "Hà Nội",
+        gender: "male",
+        hobbies: ["Chơi game", "Đọc truyện", "Vẽ"],
+        height: "1m70",
+        weight: "60",
+        maritalStatus: "In relationship",
+        phoneNumber: "0837714795",
+        };
+        console.log(myProfile);
+
+        //Yêu cầu 2
+        const partnerProfile = {
+        name: "Lily",
+        age: 18,
+        score: 8, 
+        rich: true 
+        };
+        console.log(partnerProfile);
+        
+        //Kiểm tra tuổi
+        if (myProfile.age > 20 && partnerProfile.age > 20) {
+        console.log("Tâm này cưới được rồi");
+        } else {
+        console.log("Chờ thêm chút nữa");
+        }
+
+        //Câu đố 2
+        //Yêu cầu 1
+        function greet(name) {
+        console.log("Hello world, " + name);
+        }
+        greet("Leon");
+
+        //Yêu cầu 2
+        function calculate(a, b) {
+        return (a + b) ** 2;
+        }
+        console.log(calculate(2, 3)); 
+
+        //Yêu cầu 3
+        function enterPositiveNumber() {
+        let num;
+        do {
+            num = parseFloat(prompt("Nhập một số lớn hơn 0:"));
+            console.log("Bạn vừa nhập: " + num);
+        } while (num <= 0);
+        }
+        enterPositiveNumber();
+
+        //Câu đố 3
+        //Yêu cầu 1
+        function showSlogan() {
+        let counter = 1;
+        setInterval(() => {
+            console.log("Slogan của bạn " + counter);
+            counter++;
+        }, 5000); 
+        }
+        showSlogan();
+
+        //Yêu cầu 2
+        const texts = ["Chuỗi 1", "Chuỗi 2", "Chuỗi 3"];
+        const textsLength = texts.map(text => text.length);
+        console.log(textsLength); 
+
+        //Thực hành
+        //Yêu cầu 1
+        function solveQuadratic(a, b, c) {
+        const delta = b * b - 4 * a * c;
+        if (delta < 0) {
+            return []; 
+        } else if (delta === 0) {
+            const x = -b / (2 * a);
+            return [x]; 
+        } else {
+            const x1 = (-b + Math.sqrt(delta)) / (2 * a);
+            const x2 = (-b - Math.sqrt(delta)) / (2 * a);
+            return [x1, x2]; 
+        }
+        }
+        console.log(solveQuadratic(1, -3, 2)); 
+        
+        //Yêu cầu 2
+        function isTriangle(a, b, c) {
+        return a + b > c && a + c > b && b + c > a;
+        }       
+        console.log(isTriangle(3, 4, 5)); 
+        console.log(isTriangle(1, 2, 3)); 
+
+        //Yêu cầu 3
+        function isValidDate(day, month, year) {
+        const date = new Date(year, month - 1, day);
+        return date.getFullYear() === year && date.getMonth() === month - 1 && date.getDate() === day;
+        }
+        console.log(isValidDate(29, 2, 2024)); 
+        console.log(isValidDate(31, 4, 2023)); 
+
+        //Yêu cầu 4
+        const users = [
+        { id: 1, first_name: "John", last_name: "Doe", age: 55, married: true, job: "Developer", email: "john.doe@example.com" },
+        { id: 2, first_name: "Jane", last_name: "Smith", age: 30, married: false, job: "Dentist", email: "jane.smith@example.com" },
+        {id: 3, first_name: "A", last_name: "Smith", age: 30, married: false, job: "Dentist", email: "a.smith@example.com"},
+        ];
+        //lấy id
+        function findUserById(users, id) {
+        return users.find(user => user.id === id);
+        }
+        console.log(findUserById(users, 1)); 
+        //Lấy email
+        function findEmailsByNameKeyword(users, keyword) {
+        return users
+            .filter(user => (user.first_name + " " + user.last_name).includes(keyword))
+            .map(user => user.email);
+        }
+        console.log(findEmailsByNameKeyword(users, "Jane"));
+        //Tìm người có tuổi > 50
+        function countUsersOver50(users) {
+        return users.filter(user => user.age > 50).length;
+        }
+        console.log(countUsersOver50(users)); 
+        //Đã kết hôn chưa
+        function countMaritalStatus(users) {
+        const married = users.filter(user => user.married).length;
+        const single = users.length - married;
+        return { married, single };
+        }
+        console.log(countMaritalStatus(users)); 
+        //Số lượng nghề nghiệp
+        function countUsersByJob(users) {
+        return users.reduce((acc, user) => {
+        acc[user.job] = (acc[user.job] || 0) + 1;
+        return acc;
+        }, {});
+        }
+        console.log(countUsersByJob(users)); 
+
+        //Yêu cầu 5
+// Khởi tạo kho hàng với thông tin ban đầu
+const storage = {
+    name: "Fake Storage",
+    address: "HN",
+    owner: "Dung Tien",
+    items: [
+        { id: 1, name: "Product 1", category: "Furniture", price: 20 },
+        { id: 2, name: "Product 2", category: "Device", price: 110 },
+        { id: 3, name: "Product 3", category: "Cloth", price: 2 },
+    ]
+};
+
+// 1. Sửa thông tin kho hàng
+function updateStorageInfo(storage) {
+    const newName = prompt("Nhập tên kho mới:");
+    const newAddress = prompt("Nhập địa chỉ kho mới:");
+    const newOwner = prompt("Nhập tên người sở hữu mới:");
+    storage.name = newName;
+    storage.address = newAddress;
+    storage.owner = newOwner;
+    console.log("Thông tin kho hàng sau khi cập nhật:", storage);
+}
+
+// 2. Tạo mặt hàng mới trong kho
+function addItem(storage) {
+    const newItem = {
+        id: parseInt(prompt("Nhập mã mặt hàng:")),
+        name: prompt("Nhập tên mặt hàng:"),
+        category: prompt("Nhập loại mặt hàng:"),
+        price: parseFloat(prompt("Nhập giá cả mặt hàng:"))
+    };
+
+    const exists = storage.items.some(item => item.id === newItem.id);
+    if (exists) {
+        console.log("Mã mặt hàng đã tồn tại. Vui lòng nhập lại.");
+    } else {
+        storage.items.push(newItem);
+        console.log("Danh sách mặt hàng sau khi thêm:", storage.items);
+    }
+}
+
+// 3. Tìm kiếm mặt hàng
+function searchItems(storage) {
+    const keyword = prompt("Nhập từ khóa tìm kiếm:");
+    const results = storage.items.filter(item => 
+        item.name.toLowerCase().includes(keyword.toLowerCase())
+    );
+    if (results.length > 0) {
+        console.log("Kết quả tìm kiếm:", results);
+    } else {
+        console.log("Không có mặt hàng nào chứa từ khóa.");
+    }
+}
+
+// 4. Xóa mặt hàng
+function deleteItem(storage) {
+    const itemId = parseInt(prompt("Nhập mã mặt hàng cần xóa:"));
+    const index = storage.items.findIndex(item => item.id === itemId);
+    if (index !== -1) {
+        storage.items.splice(index, 1);
+        console.log("Danh sách mặt hàng sau khi xóa:", storage.items);
+    } else {
+        console.log("Không tìm thấy mặt hàng cần xóa.");
+    }
+}
+
+// Hàm chính để chọn hành động và thực hiện
+function main() {
+    const action = parseInt(prompt("Nhập vào action (1: Sửa thông tin, 2: Tạo mặt hàng, 3: Tìm kiếm mặt hàng, 4: Xóa mặt hàng):"));
+    
+    switch (action) {
+        case 1:
+            updateStorageInfo(storage);
+            break;
+        
+        case 2:
+            addItem(storage);
+            break;
+        
+        case 3:
+            searchItems(storage);
+            break;
+        
+        case 4:
+            deleteItem(storage);
+            break;
+        
+        default:
+            console.log("Action không hợp lệ.");
+    }
+}
+
+// Gọi hàm main để bắt đầu chương trình
+main();
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
