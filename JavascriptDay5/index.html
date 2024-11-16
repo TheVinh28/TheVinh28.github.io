@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Thông Tin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Nhập Thông Tin</h2>
+        <form id="infoForm">
+            <label for="name">Họ tên:</label>
+            <input type="text" id="name" placeholder="Nhập họ tên">
+            
+            <label for="birthYear">Năm sinh:</label>
+            <input type="number" id="birthYear" placeholder="Nhập năm sinh">
+            
+            <label for="age">Tuổi:</label>
+            <input type="number" id="age" placeholder="Nhập tuổi">
+            
+            <label for="gender">Giới tính:</label>
+            <select id="gender">
+                <option value="">Chọn giới tính</option>
+                <option value="Nam">Nam</option>
+                <option value="Nữ">Nữ</option>
+            </select>
+            
+            <label for="phone">Số điện thoại:</label>
+            <input type="tel" id="phone" placeholder="Nhập số điện thoại">
+            
+            <button type="button" onclick="submitForm()">Gửi thông tin</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
