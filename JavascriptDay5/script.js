@@ -6,15 +6,15 @@ function submitForm() {
     const phone = document.getElementById("phone").value;
 
     const result = document.getElementById("result");
-    result.innerHTML = ""; // Reset result content
+    result.innerHTML = ""; 
 
-    // Check for empty fields
+    
     if (!name || !birthYear || !age || !gender || !phone) {
         result.innerHTML = "Vui lòng nhập đầy đủ thông tin.";
         return;
     }
 
-    // Display information
+    
     result.innerHTML = `
         <p><strong>Họ tên:</strong> ${name}</p>
         <p><strong>Năm sinh:</strong> ${birthYear}</p>
