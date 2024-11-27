@@ -1,0 +1,46 @@
+#list_user{
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: aqua;
+    gap: 10px;
+  }
+  .all{
+    background-color: aliceblue;
+  }
+  header{
+    background-color: rgb(14, 10, 240);
+  }
+  .card{
+    width: 400px;
+    height: 178px;
+  }
+  .card-wrapper {
+    margin-bottom: 20px; 
+    border: 1px solid black; 
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+  .card-body{
+    background-color: cadetblue;
+  }
+  .card-title{
+    display: flex;
+    justify-content: center;
+  }
+  header {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  
+  .card-img-top {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; 
+    margin: 0 auto;
+    display: block;
+  }
+  
