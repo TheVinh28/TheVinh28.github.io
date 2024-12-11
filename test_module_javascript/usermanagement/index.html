@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Users & Posts</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <header>
+        Quản Lý Users & Posts
+    </header>
+
+    <div class="container">
+        <!-- Đăng nhập -->
+        <section>
+            <h2>Đăng Nhập</h2>
+            <div class="form-group">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" placeholder="Nhập email của bạn">
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Mật khẩu:</label>
+                <input type="password" id="loginPassword" placeholder="Nhập mật khẩu">
+            </div>
+            <button onclick="login()">Đăng Nhập</button>
+            <div class="result" id="loginResult"></div>
+        </section>
+
+        <hr>
+
+        <!-- Đăng ký -->
+        <section>
+            <h2>Đăng Ký</h2>
+            <div class="form-group">
+                <label for="registerFirstName">Họ:</label>
+                <input type="text" id="registerFirstName" placeholder="Nhập họ">
+            </div>
+            <div class="form-group">
+                <label for="registerLastName">Tên:</label>
+                <input type="text" id="registerLastName" placeholder="Nhập tên">
+            </div>
+            <div class="form-group">
+                <label for="registerEmail">Email:</label>
+                <input type="email" id="registerEmail" placeholder="Nhập email">
+            </div>
+            <div class="form-group">
+                <label for="registerPassword">Mật khẩu:</label>
+                <input type="password" id="registerPassword" placeholder="Nhập mật khẩu">
+            </div>
+            <button onclick="register()">Đăng Ký</button>
+            <div class="result" id="registerResult"></div>
+        </section>
+
+        <hr>
+
+        <!-- Xem danh sách users -->
+        <section>
+            <h2>Tìm Kiếm Users</h2>
+            <div class="form-group">
+                <label for="searchUser">Từ khóa:</label>
+                <input type="text" id="searchUser" placeholder="Nhập từ khóa">
+            </div>
+            <button onclick="searchUsers()">Tìm Kiếm</button>
+            <div class="result" id="userList"></div>
+        </section>
+
+        <hr>
+
+        <!-- Xem danh sách posts -->
+        <section>
+            <h2>Danh Sách Posts</h2>
+            <button onclick="viewPosts()">Hiển Thị</button>
+            <div class="result" id="postList"></div>
+        </section>
+
+        <hr>
+
+        <!-- Tìm kiếm posts theo user -->
+        <section>
+            <h2>Tìm Kiếm Posts Theo User</h2>
+            <div class="form-group">
+                <label for="postEmail">Email User:</label>
+                <input type="email" id="postEmail" placeholder="Nhập email user">
+            </div>
+            <button onclick="searchPostsByUser()">Tìm Kiếm</button>
+            <div class="result" id="userPosts"></div>
+        </section>
+
+        <hr>
+
+        <!-- Xem chi tiết bài viết -->
+        <section>
+            <h2>Xem Chi Tiết Bài Viết</h2>
+            <div class="form-group">
+                <label for="postId">ID Bài Viết:</label>
+                <input type="number" id="postId" placeholder="Nhập ID bài viết">
+            </div>
+            <button onclick="viewPostDetails()">Xem Chi Tiết</button>
+            <div class="result" id="postDetails"></div>
+        </section>
+    </div>
+
+    <script src="./users.js"></script>
+    <script src="./posts.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

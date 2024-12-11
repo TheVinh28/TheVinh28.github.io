@@ -22,7 +22,8 @@ const averageScore = (mathScore, englishScore, literatureScore) => {
 //     3
 //   );
 // };
-
+const $btnUpdate = document.getElementById("updateButton");
+const $btnCreate = document.getElementById("createButton");
 function renderStudents(data) {
   const studentTable = document.getElementById("info-student");
   studentTable.innerHTML = "";
@@ -41,7 +42,7 @@ function renderStudents(data) {
           student.literatureScore
         )}</td>
         <td>
-        <button class="btn btn-primary btn-sm")">Sửa</button>
+        <button class="btn btn-primary btn-sm" onclick="updateStudent")">Sửa</button>
           <button class="btn btn-danger btn-sm" onclick="deleteStudent(${index})">Xóa</button>
         </td>
       </tr>
@@ -92,3 +93,58 @@ function deleteStudent(index){
 };
 //slice không làm ảnh hưởng tới mảng gốc
 //splice làm thay đổi cấu trúc của mảng gốc
+
+function updateStudent(index) {
+  //Bước 1:Lấy thông tin học sinh cần tìm
+  const student = initData[index];
+
+  const Newname = document.getElementById("name");
+
+  const NewmathScore = document.getElementById("mathScore");
+
+  const NewenglishScore = document.getElementById("englishScore");
+
+  const NewliteratureScore = document.getElementById("literatureScore");
+
+  console.log(student.gender);
+  //Bước 2:Hiện thị thông tin tương ứng lên ô input
+  Newname.value = student.name;
+
+  document.querySelector(`input[value=${student.gender}]`).checked = true;
+
+  NewmathScore.value = student.mathScore;
+
+  NewenglishScore.value = student.englishScore;
+
+  NewliteratureScore.value = student.literatureScore;
+
+  $btnUpdate.style.display = "inline";
+  $btnCreate.style.display = "none";
+  $btnUpdate.onclick = function () {
+    const name = name.value;
+    const gender = document.querySelector('input[name="gender"]:checked').value;
+    const math_score = mathScore.value;
+    const english_score = englishScore.value;
+    const literature_score = literatureScore.value;
+    console.log("name:", name);
+    
+    renderStudents[indexStudentUpdate].name = name;
+    renderStudents[indexStudentUpdate].gender = gender;
+    renderStudents[indexStudentUpdate].mathScore = mathScore;
+    renderStudents[indexStudentUpdate].englishScore = englishScore;
+    renderStudents[indexStudentUpdate].literatureScore = literatureScore;
+
+    localStorage.setItem("students", JSON.stringify(initData));
+    renderStudents(initData);
+    
+    document.querySelector('input[name="gender"]:checked').checked = false;
+    indexStudentUpdate = -1;
+
+    $btnUpdate.style.display = "none";
+    $btnCreate.style.display = "inline";
+};
+
+};
+
+
+
