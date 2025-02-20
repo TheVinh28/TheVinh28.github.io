@@ -52,7 +52,7 @@ const EventForm = () => {
   });
 
   return (
-    <div className="w-screen h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: 'url(https://via.placeholder.com/1920x1080)' }}>
+    <div className="w-screen h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: 'url(https://intern-project-chi.vercel.app/static/media/banner.3d2794dc83c9f6633434.jpg)' }}>
       <form onSubmit={formik.handleSubmit} className="bg-white p-8 rounded shadow-md w-full max-w-2xl">
         <h2 className="text-2xl font-bold mb-6 text-center">Liên Hệ Đặt Tiệc</h2>
 
