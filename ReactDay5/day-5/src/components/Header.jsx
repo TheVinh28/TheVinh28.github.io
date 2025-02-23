@@ -1,3 +1,4 @@
+// src/components/Header.js
 import React, { useState, useEffect, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Dropdown, Menu } from 'antd';
@@ -38,7 +39,7 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
         <ul className="flex space-x-6">
           <li>
             <NavLink
-              to="/"
+              to="/home"
               className={({ isActive }) =>
                 isActive
                   ? "text-orange-500 font-semibold border-b-2 border-orange-500"
@@ -107,7 +108,7 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
             <button className={`${isDarkMode ? 'text-white' : 'text-gray-500'} absolute right-3 hover:text-orange-500`}>🔍</button>
           </div>
           <NavLink
-            to="/register"
+            to="/profile"
             className={({ isActive }) =>
               isActive ? "text-orange-500 font-semibold" : `${isDarkMode ? 'text-white' : 'text-gray-700'} hover:text-orange-500`
             }
